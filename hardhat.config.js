@@ -2,6 +2,10 @@ require('@nomiclabs/hardhat-ethers');
 require('hardhat-deploy');
 require('dotenv').config();
 
+function maybeAccount(account) {
+  return account ? [account] : [];
+}
+
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
@@ -31,14 +35,26 @@ module.exports = {
       chainId: 1,
       gasPrice: 12000000000,
       blockGasLimit: 6000000,
-      accounts: process.env.ETH_MAIN_DEPLOYER ? [process.env.ETH_MAIN_DEPLOYER] : [],
+      accounts: [
+        ...maybeAccount(process.env.ETH_MAIN_DEPLOYER),
+        ...maybeAccount(process.env.ETH_MAIN_INSPECTOR),
+        ...maybeAccount(process.env.ETH_MAIN_CONSUMER1),
+        ...maybeAccount(process.env.ETH_MAIN_CONSUMER2),
+        ...maybeAccount(process.env.ETH_MAIN_CONSUMER3),
+      ],
     },
     ropsten: {
       url: process.env.ETH_ROPSTEN || 'http://127.0.0.1:8545',
       chainId: 3,
       gasPrice: 12000000000,
       blockGasLimit: 6000000,
-      accounts: process.env.ETH_ROPSTEN_DEPLOYER ? [process.env.ETH_ROPSTEN_DEPLOYER] : [],
+      accounts: [
+        ...maybeAccount(process.env.ETH_ROPSTEN_DEPLOYER),
+        ...maybeAccount(process.env.ETH_ROPSTEN_INSPECTOR),
+        ...maybeAccount(process.env.ETH_ROPSTEN_CONSUMER1),
+        ...maybeAccount(process.env.ETH_ROPSTEN_CONSUMER2),
+        ...maybeAccount(process.env.ETH_ROPSTEN_CONSUMER3),
+      ],
     },
   },
   namedAccounts: {
