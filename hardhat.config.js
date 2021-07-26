@@ -31,7 +31,7 @@ module.exports = {
       },
     },
     main: {
-      url: process.env.ETH_MAIN || 'http://127.0.0.1:8545',
+      url: process.env.ETH_MAIN_NODE || 'http://127.0.0.1:8545',
       chainId: 1,
       gasPrice: 12000000000,
       blockGasLimit: 6000000,
@@ -44,7 +44,7 @@ module.exports = {
       ],
     },
     ropsten: {
-      url: process.env.ETH_ROPSTEN || 'http://127.0.0.1:8545',
+      url: process.env.ETH_ROPSTEN_NODE || 'http://127.0.0.1:8545',
       chainId: 3,
       gasPrice: 12000000000,
       blockGasLimit: 6000000,
