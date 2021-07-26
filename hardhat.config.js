@@ -23,22 +23,22 @@ module.exports = {
       url: 'http://127.0.0.1:8545',
       gasPrice: 12000000000,
       accounts: {
-        mnemonic: process.env.ETH_MNEMONIC,
+        mnemonic: process.env.ETH_MNEMONIC || '',
       },
     },
     main: {
-      url: process.env.ETH_MAIN,
+      url: process.env.ETH_MAIN || 'http://127.0.0.1:8545',
       chainId: 1,
       gasPrice: 12000000000,
       blockGasLimit: 6000000,
-      accounts: [process.env.ETH_MAIN_DEPLOYER],
+      accounts: process.env.ETH_MAIN_DEPLOYER ? [process.env.ETH_MAIN_DEPLOYER] : [],
     },
     ropsten: {
-      url: process.env.ETH_ROPSTEN,
+      url: process.env.ETH_ROPSTEN || 'http://127.0.0.1:8545',
       chainId: 3,
       gasPrice: 12000000000,
       blockGasLimit: 6000000,
-      accounts: [process.env.ETH_ROPSTEN_DEPLOYER],
+      accounts: process.env.ETH_ROPSTEN_DEPLOYER ? [process.env.ETH_ROPSTEN_DEPLOYER] : [],
     },
   },
   namedAccounts: {
