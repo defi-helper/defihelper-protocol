@@ -18,9 +18,6 @@ module.exports = {
   networks: {
     hardhat: {
       blockGasLimit: 10000000,
-      accounts: {
-        mnemonic: process.env.ETH_MNEMONIC,
-      },
     },
     local: {
       url: 'http://127.0.0.1:8545',
