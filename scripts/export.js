@@ -2,6 +2,12 @@ const glob = require('tiny-glob');
 const fs = require('fs');
 const { parse } = require('path');
 
+try {
+  fs.accessSync('networks');
+} catch (e) {
+  fs.mkdirSync('networks/abi', { recursive: true });
+}
+
 glob('artifacts/build-info/*.json').then(async (files) => {
   const contractsAbi = await files.reduce(async (res, path) => {
     const prev = await res;
