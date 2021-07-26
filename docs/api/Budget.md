@@ -27,31 +27,21 @@ Withdrawal(address recipient, uint256 amount)
 uint256 MAXIMUM_RECIPIENT_COUNT
 ```
 
-
-
 ```solidity
 mapping(address => struct Budget.Expenditure) expenditures
 ```
-
-
 
 ```solidity
 struct EnumerableSet.AddressSet _recipients
 ```
 
-
-
 ```solidity
 mapping(address => uint256) balanceOf
 ```
 
-
-
 ```solidity
 uint256 totalSupply
 ```
-
-
 
 
 ### Functions

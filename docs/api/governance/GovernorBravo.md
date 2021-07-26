@@ -9,67 +9,45 @@
 string name
 ```
 
-
-
 ```solidity
 uint256 MIN_PROPOSAL_THRESHOLD
 ```
-
-
 
 ```solidity
 uint256 MAX_PROPOSAL_THRESHOLD
 ```
 
-
-
 ```solidity
 uint256 MIN_VOTING_PERIOD
 ```
-
-
 
 ```solidity
 uint256 MAX_VOTING_PERIOD
 ```
 
-
-
 ```solidity
 uint256 MIN_VOTING_DELAY
 ```
-
-
 
 ```solidity
 uint256 MAX_VOTING_DELAY
 ```
 
-
-
 ```solidity
 uint256 quorumVotes
 ```
-
-
 
 ```solidity
 uint256 proposalMaxOperations
 ```
 
-
-
 ```solidity
 bytes32 DOMAIN_TYPEHASH
 ```
 
-
-
 ```solidity
 bytes32 BALLOT_TYPEHASH
 ```
-
-
 
 
 ### Functions

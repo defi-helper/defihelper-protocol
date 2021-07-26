@@ -83,55 +83,37 @@ RejectClaim(uint256 bill)
 uint256 MAXIMUM_CONSUMER_COUNT
 ```
 
-
-
 ```solidity
 uint256 MAXIMUM_CLAIM_PACKAGE
 ```
-
-
 
 ```solidity
 address payable treasury
 ```
 
-
-
 ```solidity
 address inspector
 ```
-
-
 
 ```solidity
 struct EnumerableSet.AddressSet _consumers
 ```
 
-
-
 ```solidity
 mapping(address => uint256) balanceOf
 ```
-
-
 
 ```solidity
 mapping(address => uint256) claimOf
 ```
 
-
-
 ```solidity
 mapping(uint256 => struct Balance.Bill) bills
 ```
 
-
-
 ```solidity
 uint256 billCount
 ```
-
-
 
 
 ### Functions
@@ -244,7 +226,7 @@ Refund ETH from balance.
 - *amount* - Refunded amount.
 
 ```solidity
-claim(address account, uint256 amount, string description) → uint256
+claim(address account, uint256 gasFee, uint256 protocolFee, string description) → uint256
 ```
 
 Send claim.
@@ -255,12 +237,14 @@ Send claim.
 **Arguments:**
 - *account* - Target account.
 
-- *amount* - Claim amount.
+- *gasFee* - Claim gas fee.
+
+- *protocolFee* - Claim protocol fee.
 
 - *description* - Claim description.
 
 ```solidity
-acceptClaims(uint256[] _bills, uint256[] amounts)
+acceptClaims(uint256[] _bills, uint256[] gasFees, uint256[] protocolFees)
 ```
 
 Accept bills package.
@@ -271,7 +255,9 @@ Accept bills package.
 **Arguments:**
 - *_bills* - Target bills.
 
-- *amounts* - Confirmed claims amounts by bills.
+- *gasFees* - Confirmed claims gas fees by bills.
+
+- *protocolFees* - Confirmed claims protocol fees by bills.
 
 ```solidity
 rejectClaims(uint256[] _bills)

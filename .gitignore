@@ -2,4 +2,4 @@ node_modules
 cache
 deployments/local
 .env
-networks
+networks/local

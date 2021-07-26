@@ -59,43 +59,29 @@ QueueTransaction(bytes32 txHash, address target, uint256 value, string signature
 uint256 GRACE_PERIOD
 ```
 
-
-
 ```solidity
 uint256 MINIMUM_DELAY
 ```
-
-
 
 ```solidity
 uint256 MAXIMUM_DELAY
 ```
 
-
-
 ```solidity
 address admin
 ```
-
-
 
 ```solidity
 address pendingAdmin
 ```
 
-
-
 ```solidity
 uint256 delay
 ```
 
-
-
 ```solidity
 mapping(bytes32 => bool) queuedTransactions
 ```
-
-
 
 
 ### Functions

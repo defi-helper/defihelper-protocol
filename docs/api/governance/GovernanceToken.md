@@ -43,73 +43,49 @@ The standard EIP-20 approval event
 string name
 ```
 
-
-
 ```solidity
 string symbol
 ```
-
-
 
 ```solidity
 uint8 decimals
 ```
 
-
-
 ```solidity
 uint256 totalSupply
 ```
-
-
 
 ```solidity
 mapping(address => mapping(address => uint96)) allowances
 ```
 
-
-
 ```solidity
 mapping(address => uint96) balances
 ```
-
-
 
 ```solidity
 mapping(address => address) delegates
 ```
 
-
-
 ```solidity
 mapping(address => mapping(uint32 => struct GovernanceToken.Checkpoint)) checkpoints
 ```
-
-
 
 ```solidity
 mapping(address => uint32) numCheckpoints
 ```
 
-
-
 ```solidity
 bytes32 DOMAIN_TYPEHASH
 ```
-
-
 
 ```solidity
 bytes32 DELEGATION_TYPEHASH
 ```
 
-
-
 ```solidity
 mapping(address => uint256) nonces
 ```
-
-
 
 
 ### Functions

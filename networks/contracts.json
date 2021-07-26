@@ -1,0 +1,28 @@
+{
+    "3": {
+        "Balance": {
+            "address": "0x75dD429df43C3d9c372F3d1ac80e88Aae26eAc02",
+            "deployBlockNumber": 10710375
+        },
+        "Budget": {
+            "address": "0xFFac4fD97a01ebffEA5653629c53030e60d3c2e7",
+            "deployBlockNumber": 10710374
+        },
+        "GovernanceToken": {
+            "address": "0xBB99a539b49DC2e28609136bd35bDe0c08A32597",
+            "deployBlockNumber": 10710364
+        },
+        "GovernorBravo": {
+            "address": "0x68baE415A56469fC99C4dD026e30786d5ED79Ca5",
+            "deployBlockNumber": 10710366
+        },
+        "Timelock": {
+            "address": "0x83953cF5Da63a943dcf1856B217905740C9Cf033",
+            "deployBlockNumber": 10710368
+        },
+        "Treasury": {
+            "address": "0xa4D0B8357B9635d324087228e068FA7c243eecbF",
+            "deployBlockNumber": 10710371
+        }
+    }
+}

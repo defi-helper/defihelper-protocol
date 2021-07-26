@@ -10,8 +10,6 @@ uint256 protocolFee
 ```
 
 
-
-
 ### Functions
 ```solidity
 constructor(address _balance, uint256 _protocolFee)

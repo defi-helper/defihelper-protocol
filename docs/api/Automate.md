@@ -10,12 +10,20 @@ contract Balance balance
 ```
 
 
-
+### Functions
 ```solidity
-mapping(uint256 => struct Automate.Fee) fees
+pause()
 ```
 
+Pause bill maker.
 
 
 
-### Functions
+```solidity
+unpause()
+```
+
+Unpause bill maker.
+
+
+

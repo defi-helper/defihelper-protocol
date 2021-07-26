@@ -9,18 +9,12 @@
 address admin
 ```
 
-
-
 ```solidity
 address pendingAdmin
 ```
 
-
-
 ```solidity
 address implementation
 ```
-
-
 
 

@@ -12,7 +12,7 @@
     "lint:sol:fix": "prettier --write 'contracts/**/*.sol'",
     "deploy:main": "hardhat deploy --deploy-scripts ./deploy/main --tags Protocol",
     "seed:main": "hardhat deploy --deploy-scripts ./deploy/main --tags Seed",
-    "export": "nodejs ./scripts/export.js",
+    "export": "node ./scripts/export.js",
     "etherscan-verify": "scripts/etherscan-verify.sh",
     "docs": "solidity-docgen --solc-module solc-0.8 -i ./contracts -o ./docs/api -t ./docs/templates",
     "node": "hardhat node --fork https://ropsten.bondappetit.io --no-deploy"
