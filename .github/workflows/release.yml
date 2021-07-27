@@ -113,7 +113,7 @@ jobs:
           name: build-${{ github.head_ref }}-${{ github.sha }}
           path: ./output
 
-     - name: npm etherscan-verify test1
+      - name: npm etherscan-verify test1
         run: echo $ETHERSCAN_API_KEY
 
       - name: npm etherscan-verify test2
