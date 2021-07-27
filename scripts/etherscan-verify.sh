@@ -26,5 +26,4 @@ esac
 done
 set -- "${POSITIONAL[@]}"
 
-npm i hardhat
 npx hardhat etherscan-verify --network ${NETWORK} --api-key ${ETHERSCAN_API_KEY}
