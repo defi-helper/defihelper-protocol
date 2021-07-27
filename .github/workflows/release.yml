@@ -113,14 +113,8 @@ jobs:
           name: build-${{ github.head_ref }}-${{ github.sha }}
           path: ./output
 
-      - name: npm etherscan-verify test1
-        run: echo $ETHERSCAN_API_KEY
-
-      - name: npm etherscan-verify test2
-        run: echo ${{ secrets.ETHERSCAN_API_KEY }}
-
       - name: npm etherscan-verify
-        run: npx hardhat etherscan-verify --network ropsten --api-key $ETHERSCAN_API_KEY
+        run: npx hardhat etherscan-verify --network ropsten --api-key ${{ secrets.ETHERSCAN_API_KEY }}
         working-directory: ./output
         env:
           ETH_ROPSTEN_NODE: ${{secrets.ETH_ROPSTEN_NODE}}
