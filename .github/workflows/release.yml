@@ -114,9 +114,8 @@ jobs:
           path: ./output
 
       - name: npm etherscan-verify
-        run: npm run etherscan-verify -- --network ropsten
+        run: npx hardhat etherscan-verify --network ropsten --api-key ${{secrets.ETHERSCAN_API_KEY}}
         env:
-          ETHERSCAN_API_KEY: ${{secrets.ETHERSCAN_API_KEY}}
           ETH_ROPSTEN_NODE: ${{secrets.ETH_ROPSTEN_NODE}}
         working-directory: ./output
 
