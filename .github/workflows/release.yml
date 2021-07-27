@@ -103,6 +103,10 @@ jobs:
           git config --global user.email "${GITHUB_ACTOR}@https://users.noreply.github.com/"
           git clone "https://${{ secrets.ACCESS_TOKEN }}@github.com/$GITHUB_REPOSITORY.git" --branch master --single-branch ./output
 
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ./output
+
       - name: Download artifacts
         uses: actions/download-artifact@v2
         with:
