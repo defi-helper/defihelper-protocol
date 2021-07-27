@@ -1,28 +1,28 @@
 {
     "3": {
         "Balance": {
-            "address": "0x954DFbFDFa65D908098a9Fc8C4C700263d833c8A",
-            "deployBlockNumber": 10716906
+            "address": "0x8B5F157A31F8F2A63713DD90Dd3cdE3b6829cce4",
+            "deployBlockNumber": 10717081
         },
         "Budget": {
-            "address": "0xB4a42bf72eA22c14B5331353C31F3a07acdf1858",
-            "deployBlockNumber": 10716905
+            "address": "0x3c5F6c248232F5480061B495cC83Bc849Dae0946",
+            "deployBlockNumber": 10717080
         },
         "GovernanceToken": {
-            "address": "0x3521F3Bb39De3680D244a10f9b29753b7344F426",
-            "deployBlockNumber": 10716899
+            "address": "0x554Be917F15dbC35A25B7004c38B7fB07fE8BB75",
+            "deployBlockNumber": 10717073
         },
         "GovernorBravo": {
-            "address": "0xe187061d1103d620FEab3cEabD9627980cd4eb8A",
-            "deployBlockNumber": 10716900
+            "address": "0x127639735F82627eB65536d3e4d1AE23edc8D93D",
+            "deployBlockNumber": 10717074
         },
         "Timelock": {
-            "address": "0x369652D3Fd8e95B35EBd2f273585444a17419551",
-            "deployBlockNumber": 10716901
+            "address": "0x152f82A458d5B697C56b73aC4645Cf91Ce5E99ad",
+            "deployBlockNumber": 10717075
         },
         "Treasury": {
-            "address": "0x323a133fc541Cb64f919cFFC7f136e0Fd0F28d89",
-            "deployBlockNumber": 10716903
+            "address": "0xd0b38d2F7Af68436ca35B37F9aEba086df60031E",
+            "deployBlockNumber": 10717077
         }
     }
 }
