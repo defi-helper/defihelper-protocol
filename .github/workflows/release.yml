@@ -23,13 +23,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: npm lint:sol
+      - name: Run lint
         run: npm run lint:sol
 
-      - name: npm build
+      - name: Run build
         run: npm run build
 
-      - name: npm deploy:main
+      - name: Run deploy
         run: npm run deploy:main -- --network ropsten --reset
         env:
           ETH_ROPSTEN_NODE: ${{secrets.ETH_ROPSTEN_NODE}}
@@ -39,11 +39,11 @@ jobs:
           ETH_ROPSTEN_CONSUMER2: ${{secrets.ETH_ROPSTEN_CONSUMER2}}
           ETH_ROPSTEN_CONSUMER3: ${{secrets.ETH_ROPSTEN_CONSUMER3}}
 
-      - name: npm export
-        run: npm export
+      - name: Run export
+        run: npm run export
 
-      - name: npm docs
-        run: npm docs
+      - name: Run docs
+        run: npm run docs
 
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
