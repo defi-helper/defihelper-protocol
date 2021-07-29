@@ -7,4 +7,4 @@ module.exports = migration(async ({ getNamedAccounts, utils: { deploy } }) => {
     args: [deployer],
   });
 });
-module.exports.tags = ['Protocol'];
+module.exports.tags = ['Governance'];

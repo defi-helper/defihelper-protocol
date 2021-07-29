@@ -22,6 +22,9 @@ module.exports = {
   networks: {
     hardhat: {
       blockGasLimit: 10000000,
+      accounts: {
+        mnemonic: process.env.ETH_MNEMONIC || '',
+      },
     },
     local: {
       url: 'http://127.0.0.1:8545',
@@ -37,6 +40,7 @@ module.exports = {
       blockGasLimit: 6000000,
       accounts: [
         ...maybeAccount(process.env.ETH_MAIN_DEPLOYER),
+        ...maybeAccount(process.env.ETH_MAIN_PRICE_FEED),
         ...maybeAccount(process.env.ETH_MAIN_INSPECTOR),
         ...maybeAccount(process.env.ETH_MAIN_CONSUMER1),
         ...maybeAccount(process.env.ETH_MAIN_CONSUMER2),
@@ -50,6 +54,7 @@ module.exports = {
       blockGasLimit: 6000000,
       accounts: [
         ...maybeAccount(process.env.ETH_ROPSTEN_DEPLOYER),
+        ...maybeAccount(process.env.ETH_ROPSTEN_PRICE_FEED),
         ...maybeAccount(process.env.ETH_ROPSTEN_INSPECTOR),
         ...maybeAccount(process.env.ETH_ROPSTEN_CONSUMER1),
         ...maybeAccount(process.env.ETH_ROPSTEN_CONSUMER2),
@@ -62,26 +67,37 @@ module.exports = {
       default: 0,
       1: 0,
       3: 0,
+      56: 0,
     },
-    inspector: {
-      default: 1,
+    priceFeed: {
+      default: '0x0000000000000000000000000000000000000000',
       1: 1,
       3: 1,
+      56: 1,
     },
-    consumer1: {
+    inspector: {
       default: 2,
       1: 2,
       3: 2,
+      56: 2,
     },
-    consumer2: {
+    consumer1: {
       default: 3,
       1: 3,
       3: 3,
+      56: 3,
     },
-    consumer3: {
+    consumer2: {
       default: 4,
       1: 4,
       3: 4,
+      56: 4,
+    },
+    consumer3: {
+      default: 5,
+      1: 5,
+      3: 5,
+      56: 5,
     },
   },
 };

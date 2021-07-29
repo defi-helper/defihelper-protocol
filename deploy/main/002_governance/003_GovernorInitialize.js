@@ -19,4 +19,4 @@ module.exports = migration(async ({ utils: { read, get, execute } }) => {
     new bn(100000).multipliedBy(new bn(10).pow(18)).toString(10), // Proposal threshold - 100,000 DFH
   );
 });
-module.exports.tags = ['Protocol'];
+module.exports.tags = ['Governance'];

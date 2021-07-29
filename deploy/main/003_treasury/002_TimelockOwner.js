@@ -8,4 +8,4 @@ module.exports = migration(async ({ utils: { read, get, execute } }) => {
 
   await execute('Treasury', {}, 'transferOwnership', timelock.address);
 });
-module.exports.tags = ['Protocol'];
+module.exports.tags = ['GovernanceOwner'];

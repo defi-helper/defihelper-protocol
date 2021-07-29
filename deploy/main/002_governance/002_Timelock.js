@@ -10,4 +10,4 @@ module.exports = migration(async ({ utils: { get, deploy } }) => {
     ]
   });
 });
-module.exports.tags = ['Protocol'];
+module.exports.tags = ['Governance'];

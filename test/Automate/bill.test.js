@@ -7,8 +7,8 @@ describe('Automate._bill', function () {
   let automate, balance;
   let account;
   const zeroAddress = '0x0000000000000000000000000000000000000000';
-  const protocolFee = new bn(10).pow(18).toString();
-  const gasPrice = new bn(10).pow(9).toString();
+  const protocolFee = (1e18).toString();
+  const gasPrice = (1e9).toString();
   before(async function () {
     const Balance = await ethers.getContractFactory('Balance');
     balance = await Balance.deploy(zeroAddress, zeroAddress);
