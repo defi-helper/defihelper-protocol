@@ -40,7 +40,6 @@ module.exports = {
       blockGasLimit: 6000000,
       accounts: [
         ...maybeAccount(process.env.ETH_MAIN_DEPLOYER),
-        ...maybeAccount(process.env.ETH_MAIN_PRICE_FEED),
         ...maybeAccount(process.env.ETH_MAIN_INSPECTOR),
         ...maybeAccount(process.env.ETH_MAIN_CONSUMER1),
         ...maybeAccount(process.env.ETH_MAIN_CONSUMER2),
@@ -54,7 +53,6 @@ module.exports = {
       blockGasLimit: 6000000,
       accounts: [
         ...maybeAccount(process.env.ETH_ROPSTEN_DEPLOYER),
-        ...maybeAccount(process.env.ETH_ROPSTEN_PRICE_FEED),
         ...maybeAccount(process.env.ETH_ROPSTEN_INSPECTOR),
         ...maybeAccount(process.env.ETH_ROPSTEN_CONSUMER1),
         ...maybeAccount(process.env.ETH_ROPSTEN_CONSUMER2),
@@ -71,33 +69,33 @@ module.exports = {
     },
     priceFeed: {
       default: '0x0000000000000000000000000000000000000000',
+      1: '0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419',
+      3: '0x64125B3eDF8C778c0814A6cd368a133764B1e156',
+      56: '0x0567F2323251f0Aab15c8dFb1967E4e8A7D42aeE',
+    },
+    inspector: {
+      default: 1,
       1: 1,
       3: 1,
       56: 1,
     },
-    inspector: {
+    consumer1: {
       default: 2,
       1: 2,
       3: 2,
       56: 2,
     },
-    consumer1: {
+    consumer2: {
       default: 3,
       1: 3,
       3: 3,
       56: 3,
     },
-    consumer2: {
+    consumer3: {
       default: 4,
       1: 4,
       3: 4,
       56: 4,
-    },
-    consumer3: {
-      default: 5,
-      1: 5,
-      3: 5,
-      56: 5,
     },
   },
 };
