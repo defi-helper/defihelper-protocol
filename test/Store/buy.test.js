@@ -31,7 +31,7 @@ describe('Store.price', function () {
   it('buy: should buy product', async function () {
     const price = await store.price(product.id);
 
-    const tx = await store.buy(product.id, account.address, price.toString(), Math.floor(Date.now() / 1000) + 100);
+    const tx = await store.buy(product.id, account.address, price.toString(), Math.floor(Date.now() / 1000) + 10000);
     const [buyEvent] = await store.queryFilter(store.filters.Buy(), tx.blockNumber);
     strictEqual(buyEvent.args.product, product.id, 'Invalid product id');
     strictEqual(buyEvent.args.recipient, account.address, 'Invalid recipient');
@@ -48,14 +48,14 @@ describe('Store.price', function () {
 
   it('buy: should revert tx if amount zero', async function () {
     await assertions.reverts(
-      store.buy(product.id + 1, account.address, 0, Math.floor(Date.now() / 1000) + 100),
+      store.buy(product.id + 1, account.address, 0, Math.floor(Date.now() / 1000) + 10000),
       'Store: negative or zero price',
     );
   });
 
   it('buy: should revert tx if excessive price', async function () {
     await assertions.reverts(
-      store.buy(product.id, account.address, ethers.utils.parseEther('1'), Math.floor(Date.now() / 1000) + 100),
+      store.buy(product.id, account.address, ethers.utils.parseEther('1'), Math.floor(Date.now() / 1000) + 10000),
       'Store: excessive price',
     );
   });
