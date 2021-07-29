@@ -38,6 +38,7 @@ jobs:
           ETH_ROPSTEN_CONSUMER1: ${{secrets.ETH_ROPSTEN_CONSUMER1}}
           ETH_ROPSTEN_CONSUMER2: ${{secrets.ETH_ROPSTEN_CONSUMER2}}
           ETH_ROPSTEN_CONSUMER3: ${{secrets.ETH_ROPSTEN_CONSUMER3}}
+          ETH_ROPSTEN_PRICE_FEED: 0x0000000000000000000000000000000000000000
 
       - name: Run export
         run: npm run export
