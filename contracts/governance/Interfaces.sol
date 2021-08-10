@@ -78,9 +78,6 @@ contract GovernorBravoDelegateStorageV1 is GovernorBravoDelegatorStorage {
   /// @notice The number of votes required in order for a voter to become a proposer
   uint256 public proposalThreshold;
 
-  /// @notice Initial proposal id set at become
-  uint256 public initialProposalId;
-
   /// @notice The total number of proposals
   uint256 public proposalCount;
 

@@ -96,8 +96,6 @@ contract GovernorBravo is GovernorBravoDelegateStorageV1, GovernorBravoEvents {
     bytes[] memory calldatas,
     string memory description
   ) public returns (uint256) {
-    // Reject proposals before initiating as Governor
-    require(initialProposalId != 0, "GovernorBravo::propose: Governor Bravo not active");
     require(
       governanceToken.getPriorVotes(msg.sender, block.number - 1) > proposalThreshold,
       "GovernorBravo::propose: proposer votes below proposal threshold"
@@ -280,7 +278,7 @@ contract GovernorBravo is GovernorBravoDelegateStorageV1, GovernorBravoEvents {
    * @return Proposal state
    */
   function state(uint256 proposalId) public view returns (ProposalState) {
-    require(proposalCount >= proposalId && proposalId > initialProposalId, "GovernorBravo::state: invalid proposal id");
+    require(proposalCount >= proposalId, "GovernorBravo::state: invalid proposal id");
     Proposal storage proposal = proposals[proposalId];
     if (proposal.canceled) {
       return ProposalState.Canceled;
