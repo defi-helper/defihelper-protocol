@@ -15,7 +15,7 @@
     "export": "node ./scripts/export.js",
     "etherscan-verify": "scripts/etherscan-verify.sh",
     "docs": "solidity-docgen --solc-module solc-0.8 -i ./contracts -o ./docs/api -t ./docs/templates",
-    "node": "hardhat node --fork https://ropsten.bondappetit.io --no-deploy"
+    "node": "hardhat node --fork https://ropsten.infura.io/v3/03d22d3114e54a6dbab0cb1c6163b48a --no-deploy"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@^0.3.0-beta.10",

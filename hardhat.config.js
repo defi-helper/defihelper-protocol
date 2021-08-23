@@ -28,7 +28,8 @@ module.exports = {
     },
     local: {
       url: 'http://127.0.0.1:8545',
-      gasPrice: 12000000000,
+      chainId: 31337,
+      gasPrice: 1_000_000_000,
       accounts: {
         mnemonic: process.env.ETH_MNEMONIC || '',
       },
@@ -36,8 +37,8 @@ module.exports = {
     main: {
       url: process.env.ETH_MAIN_NODE || 'http://127.0.0.1:8545',
       chainId: 1,
-      gasPrice: 12000000000,
-      blockGasLimit: 6000000,
+      gasPrice: 12_000_000_000,
+      blockGasLimit: 6_000_000,
       accounts: [
         ...maybeAccount(process.env.ETH_MAIN_DEPLOYER),
         ...maybeAccount(process.env.ETH_MAIN_INSPECTOR),
@@ -49,8 +50,8 @@ module.exports = {
     ropsten: {
       url: process.env.ETH_ROPSTEN_NODE || 'http://127.0.0.1:8545',
       chainId: 3,
-      gasPrice: 12000000000,
-      blockGasLimit: 6000000,
+      gasPrice: 12_000_000_000,
+      blockGasLimit: 6_000_000,
       accounts: [
         ...maybeAccount(process.env.ETH_ROPSTEN_DEPLOYER),
         ...maybeAccount(process.env.ETH_ROPSTEN_INSPECTOR),
