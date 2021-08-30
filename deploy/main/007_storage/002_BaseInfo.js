@@ -5,6 +5,7 @@ const { utils } = require('ethers');
 const defaultChainId = 31337;
 
 module.exports = migration(async ({ utils: { get, execute } }) => {
+  const { deployer } = await getNamedAccounts();
   const [timelock, govToken, governor, balance, treasury, budget, store] = await Promise.all([
     get('Timelock'),
     get('GovernanceToken'),
@@ -22,6 +23,7 @@ module.exports = migration(async ({ utils: { get, execute } }) => {
     { method: 'setAddress', key: 'DFH:Contract:Budget', value: budget.address },
     { method: 'setAddress', key: 'DFH:Contract:Balance', value: balance.address },
     { method: 'setAddress', key: 'DFH:Contract:Store', value: store.address },
+    { method: 'setAddress', key: 'DFH:Pauser', value: deployer },
     { method: 'setUint', key: 'DFH:Fee:Automate', value: 10e9 },
     ...[
       {
