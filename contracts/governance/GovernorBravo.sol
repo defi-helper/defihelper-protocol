@@ -8,7 +8,7 @@ import "./Interfaces.sol";
 // solhint-disable not-rely-on-time
 contract GovernorBravo is GovernorBravoDelegateStorageV1, GovernorBravoEvents {
   /// @notice The name of this contract
-  string public constant name = "DFH Governor Bravo";
+  string public constant name = "DeFiHelper Governor Bravo";
 
   /// @notice The minimum setable proposal threshold
   uint256 public constant MIN_PROPOSAL_THRESHOLD = 50_000e18; // 50,000 DFH

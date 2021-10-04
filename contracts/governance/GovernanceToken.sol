@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 // solhint-disable private-vars-leading-underscore
 contract GovernanceToken is Ownable {
   /// @notice EIP-20 token name for this token
-  string public constant name = "DeFiHelper token";
+  string public constant name = "DeFiHelper Governance Token";
 
   /// @notice EIP-20 token symbol for this token
   string public constant symbol = "DFH";
