@@ -24,8 +24,20 @@ module.exports = migration(async ({ utils: { get, execute } }) => {
     { method: 'setAddress', key: 'DFH:Contract:Balance', value: balance.address },
     { method: 'setAddress', key: 'DFH:Contract:Store', value: store.address },
     { method: 'setAddress', key: 'DFH:Pauser', value: deployer },
-    { method: 'setUint', key: 'DFH:Fee:Automate', value: 10e9 },
+    { method: 'setUint', key: 'DFH:Fee:Automate', value: 1e8 },
     ...[
+      {
+        method: 'setAddress',
+        key: 'DFH:Fee:PriceFeed',
+        value: {
+          1: '0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419',
+          4: '0x78F9e60608bF48a1155b4B2A5e31F32318a1d85F',
+          42: '	0x9326BFA02ADD2366b30bacB125260Af641031331',
+          56: '0x0567F2323251f0Aab15c8dFb1967E4e8A7D42aeE',
+          97: '0x2514895c72f50D8bd4B4F9b1110F0D6bD2c97526',
+          137: '0xAB594600376Ec9fD91F8e885dADF0CE036862dE0',
+        }[network.config.chainId ?? defaultChainId],
+      },
       {
         method: 'setAddress',
         key: 'UniswapV2:Contract:Router2',
