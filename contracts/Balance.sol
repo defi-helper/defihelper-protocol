@@ -227,7 +227,7 @@ contract Balance is Ownable {
       _bills.length == gasFees.length && _bills.length == protocolFees.length,
       "Balance::acceptClaims: arity mismatch"
     );
-    require(_bills.length < MAXIMUM_CLAIM_PACKAGE, "Balance::acceptClaims: too many claims");
+    require(_bills.length <= MAXIMUM_CLAIM_PACKAGE, "Balance::acceptClaims: too many claims");
 
     uint256 transferredAmount;
     for (uint256 i = 0; i < _bills.length; i++) {
