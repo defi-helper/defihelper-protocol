@@ -10,7 +10,7 @@ describe('Balance.deposit', function () {
   const zeroAddress = '0x0000000000000000000000000000000000000000';
   before(async function () {
     const Balance = await ethers.getContractFactory('Balance');
-    balance = await Balance.deploy(zeroAddress, zeroAddress);
+    balance = await Balance.deploy(zeroAddress);
     await balance.deployed();
 
     [account] = await ethers.getSigners();

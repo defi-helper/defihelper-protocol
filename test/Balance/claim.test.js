@@ -13,7 +13,7 @@ describe('Balance.claim', function () {
   const billStatusPending = 0;
   before(async function () {
     const Balance = await ethers.getContractFactory('Balance');
-    balance = await Balance.deploy(zeroAddress, zeroAddress);
+    balance = await Balance.deploy(zeroAddress);
     await balance.deployed();
     const BalanceConsumerMock = await ethers.getContractFactory('BalanceConsumerMock');
     consumerMock = await BalanceConsumerMock.deploy(balance.address);

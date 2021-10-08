@@ -13,7 +13,7 @@ describe('Balance.acceptClaims', function () {
   const billStatusAccepted = 1;
   before(async function () {
     const Balance = await ethers.getContractFactory('Balance');
-    balance = await Balance.deploy(zeroAddress, zeroAddress);
+    balance = await Balance.deploy(zeroAddress);
     await balance.deployed();
 
     [account, consumer, inspector, treasury] = await ethers.getSigners();
@@ -23,7 +23,7 @@ describe('Balance.acceptClaims', function () {
       gasPrice: 0,
     });
     await balance.addConsumer(consumer.address);
-    await balance.changeInspector(inspector.address);
+    await balance.addInspector(inspector.address);
     await balance.changeTreasury(treasury.address);
   });
 

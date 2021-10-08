@@ -7,17 +7,20 @@ import "@openzeppelin/contracts/utils/structs/EnumerableSet.sol";
 contract Balance is Ownable {
   using EnumerableSet for EnumerableSet.AddressSet;
 
+  /// @notice Maximum inspector count.
+  uint256 public constant MAXIMUM_INSPECTOR_COUNT = 100;
+
   /// @notice Maximum consumer count.
-  uint256 public constant MAXIMUM_CONSUMER_COUNT = 10;
+  uint256 public constant MAXIMUM_CONSUMER_COUNT = 100;
 
   /// @notice Maximum accept or reject claims by one call.
-  uint256 public constant MAXIMUM_CLAIM_PACKAGE = 10;
+  uint256 public constant MAXIMUM_CLAIM_PACKAGE = 500;
 
   /// @notice Treasury contract
   address payable public treasury;
 
-  /// @notice Oracle accepting and rejecting claims
-  address public inspector;
+  /// @dev Inspectors list.
+  EnumerableSet.AddressSet internal _inspectors;
 
   /// @dev Consumers list.
   EnumerableSet.AddressSet internal _consumers;
@@ -58,7 +61,9 @@ contract Balance is Ownable {
 
   event TreasuryChanged(address indexed treasury);
 
-  event InspectorChanged(address indexed inspector);
+  event InspectorAdded(address indexed inspector);
+
+  event InspectorRemoved(address indexed inspector);
 
   event ConsumerAdded(address indexed consumer);
 
@@ -74,13 +79,12 @@ contract Balance is Ownable {
 
   event RejectClaim(uint256 indexed bill);
 
-  constructor(address payable _treasury, address _inspector) {
+  constructor(address payable _treasury) {
     treasury = _treasury;
-    inspector = _inspector;
   }
 
   modifier onlyInspector() {
-    require(inspector == _msgSender(), "Balance: caller is not the inspector");
+    require(_inspectors.contains(_msgSender()), "Balance: caller is not the inspector");
     _;
   }
 
@@ -94,12 +98,45 @@ contract Balance is Ownable {
   }
 
   /**
-   * @notice Change inspector oracle address.
-   * @param _inspector New inspector oracle address.
+   * @notice Add inspector.
+   * @param inspector Added inspector.
    */
-  function changeInspector(address _inspector) external onlyOwner {
-    inspector = _inspector;
-    emit InspectorChanged(inspector);
+  function addInspector(address inspector) external onlyOwner {
+    require(!_inspectors.contains(inspector), "Balance::addInspector: inspector already added");
+    require(
+      _inspectors.length() < MAXIMUM_INSPECTOR_COUNT,
+      "Balance::addInspector: inspector must not exceed maximum count"
+    );
+
+    _inspectors.add(inspector);
+
+    emit InspectorAdded(inspector);
+  }
+
+  /**
+   * @notice Remove inspector.
+   * @param inspector Removed inspector.
+   */
+  function removeInspector(address inspector) external onlyOwner {
+    require(_inspectors.contains(inspector), "Balance::removeInspector: inspector already removed");
+
+    _inspectors.remove(inspector);
+
+    emit InspectorRemoved(inspector);
+  }
+
+  /**
+   * @notice Get all inspectors.
+   * @return All inspectors addresses.
+   */
+  function inspectors() external view returns (address[] memory) {
+    address[] memory result = new address[](_inspectors.length());
+
+    for (uint256 i = 0; i < _inspectors.length(); i++) {
+      result[i] = _inspectors.at(i);
+    }
+
+    return result;
   }
 
   /**
@@ -123,7 +160,7 @@ contract Balance is Ownable {
    * @param consumer Removed consumer.
    */
   function removeConsumer(address consumer) external onlyOwner {
-    require(_consumers.contains(consumer), "Balance::addConsumer: consumer already removed");
+    require(_consumers.contains(consumer), "Balance::removeConsumer: consumer already removed");
 
     _consumers.remove(consumer);
 

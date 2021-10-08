@@ -12,7 +12,7 @@ describe('Balance.rejectClaims', function () {
   const billStatusRejected = 2;
   before(async function () {
     const Balance = await ethers.getContractFactory('Balance');
-    balance = await Balance.deploy(zeroAddress, zeroAddress);
+    balance = await Balance.deploy(zeroAddress);
     await balance.deployed();
 
     [account, consumer, inspector] = await ethers.getSigners();
@@ -22,7 +22,7 @@ describe('Balance.rejectClaims', function () {
       gasPrice: 0,
     });
     await balance.addConsumer(consumer.address);
-    await balance.changeInspector(inspector.address);
+    await balance.addInspector(inspector.address);
   });
 
   it('rejectClaims: should reject claims', async function () {

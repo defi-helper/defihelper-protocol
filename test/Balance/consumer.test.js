@@ -8,7 +8,7 @@ describe('Balance.consumer', function () {
   const zeroAddress = '0x0000000000000000000000000000000000000000';
   before(async function () {
     const Balance = await ethers.getContractFactory('Balance');
-    balance = await Balance.deploy(zeroAddress, zeroAddress);
+    balance = await Balance.deploy(zeroAddress);
     await balance.deployed();
 
     [, newConsumer] = await ethers.getSigners();
@@ -44,7 +44,7 @@ describe('Balance.consumer', function () {
   it('removeConsumer: should revert tx if consumer already removed', async function () {
     await assertions.reverts(
       balance.removeConsumer(newConsumer.address),
-      'Balance::addConsumer: consumer already removed',
+      'Balance::removeConsumer: consumer already removed',
     );
   });
 
