@@ -11,10 +11,10 @@ contract GovernorBravo is GovernorBravoDelegateStorageV1, GovernorBravoEvents {
   string public constant name = "DeFiHelper Governor Bravo";
 
   /// @notice The minimum setable proposal threshold
-  uint256 public constant MIN_PROPOSAL_THRESHOLD = 50_000e18; // 50,000 DFH
+  uint256 public constant MIN_PROPOSAL_THRESHOLD = 3_000_000e18; // 3,000,000 DFH (0,3%)
 
   /// @notice The maximum setable proposal threshold
-  uint256 public constant MAX_PROPOSAL_THRESHOLD = 100_000e18; //100,000 DFH
+  uint256 public constant MAX_PROPOSAL_THRESHOLD = 40_000_000e18; //40,000,000 DFH (4%)
 
   /// @notice The minimum setable voting period
   uint256 public constant MIN_VOTING_PERIOD = 5760; // About 24 hours
@@ -29,7 +29,7 @@ contract GovernorBravo is GovernorBravoDelegateStorageV1, GovernorBravoEvents {
   uint256 public constant MAX_VOTING_DELAY = 40320; // About 1 week
 
   /// @notice The number of votes in support of a proposal required in order for a quorum to be reached and for a vote to succeed
-  uint256 public constant quorumVotes = 400000e18; // 400,000 = 4% of DFH
+  uint256 public constant quorumVotes = 40_000_000e18; // 40,000,000 = 4% of DFH
 
   /// @notice The maximum number of actions that can be included in a proposal
   uint256 public constant proposalMaxOperations = 10; // 10 actions
