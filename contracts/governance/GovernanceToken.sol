@@ -361,7 +361,7 @@ contract GovernanceToken is Ownable {
     uint96 amount = safe96(rawAmount, "GovernanceToken::_burn: amount exceeds 96 bits");
 
     balances[account] = sub96(balances[account], amount, "GovernanceToken::_burn: burn amount exceeds balance");
-    totalSupply += amount;
+    totalSupply -= amount;
     emit Transfer(account, address(0), amount);
   }
 
