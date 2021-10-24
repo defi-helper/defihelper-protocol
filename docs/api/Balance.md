@@ -14,7 +14,15 @@ TreasuryChanged(address treasury)
 
 
 ```solidity
-InspectorChanged(address inspector)
+InspectorAdded(address inspector)
+```
+
+
+
+
+
+```solidity
+InspectorRemoved(address inspector)
 ```
 
 
@@ -80,6 +88,10 @@ RejectClaim(uint256 bill)
 
 ### Variables
 ```solidity
+uint256 MAXIMUM_INSPECTOR_COUNT
+```
+
+```solidity
 uint256 MAXIMUM_CONSUMER_COUNT
 ```
 
@@ -92,7 +104,7 @@ address payable treasury
 ```
 
 ```solidity
-address inspector
+struct EnumerableSet.AddressSet _inspectors
 ```
 
 ```solidity
@@ -118,7 +130,7 @@ uint256 billCount
 
 ### Functions
 ```solidity
-constructor(address payable _treasury, address _inspector)
+constructor(address payable _treasury)
 ```
 
 
@@ -138,16 +150,40 @@ Change treasury contract address.
 - *_treasury* - New treasury contract address.
 
 ```solidity
-changeInspector(address _inspector)
+addInspector(address inspector)
 ```
 
-Change inspector oracle address.
+Add inspector.
 
 
 
 
 **Arguments:**
-- *_inspector* - New inspector oracle address.
+- *inspector* - Added inspector.
+
+```solidity
+removeInspector(address inspector)
+```
+
+Remove inspector.
+
+
+
+
+**Arguments:**
+- *inspector* - Removed inspector.
+
+```solidity
+inspectors() → address[]
+```
+
+Get all inspectors.
+
+
+
+
+**Returns:**
+- *All* - inspectors addresses.
 
 ```solidity
 addConsumer(address consumer)
