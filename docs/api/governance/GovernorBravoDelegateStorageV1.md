@@ -20,10 +20,6 @@ uint256 proposalThreshold
 ```
 
 ```solidity
-uint256 initialProposalId
-```
-
-```solidity
 uint256 proposalCount
 ```
 
