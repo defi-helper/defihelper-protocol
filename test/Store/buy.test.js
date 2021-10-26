@@ -10,7 +10,7 @@ describe('Store.price', function () {
   const zeroAddress = '0x0000000000000000000000000000000000000000';
   before(async function () {
     const Balance = await ethers.getContractFactory('Balance');
-    balance = await Balance.deploy(zeroAddress, zeroAddress);
+    balance = await Balance.deploy(zeroAddress);
     await balance.deployed();
     const PriceFeed = await ethers.getContractFactory('PriceFeedMock');
     priceFeed = await PriceFeed.deploy(8, 'T', 3);

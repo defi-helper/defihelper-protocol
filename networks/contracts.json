@@ -40,5 +40,31 @@
             "address": "0x8B869f014538118DDE992a7E568CE90479F7B4e8",
             "deployBlockNumber": 11292246
         }
+    },
+    "97": {
+        "Balance": {
+            "address": "0x7B53325bE344b839F7e7F77c233f10feD7b10Dc0",
+            "deployBlockNumber": 13558446
+        },
+        "Budget": {
+            "address": "0x39a18914C79eC77DB7d17B0AB0F2a750D794b128",
+            "deployBlockNumber": 13558472
+        },
+        "ERC1167": {
+            "address": "0xA32379671A956845E6B607B2a3b574Fe7c83146b",
+            "deployBlockNumber": 13558568
+        },
+        "ProxyFactory": {
+            "address": "0xA2059370B0896D6c1D3736D51101a0F393Bc28f2",
+            "deployBlockNumber": 13558573
+        },
+        "Storage": {
+            "address": "0xC1F7380DA3b0feaCDFD2EFA8579EfBADA0C9ae21",
+            "deployBlockNumber": 13558525
+        },
+        "Store": {
+            "address": "0xa4D0B8357B9635d324087228e068FA7c243eecbF",
+            "deployBlockNumber": 13558500
+        }
     }
 }
