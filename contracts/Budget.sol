@@ -8,7 +8,7 @@ contract Budget is Ownable {
   using EnumerableSet for EnumerableSet.AddressSet;
 
   /// @notice Maximum recipient count.
-  uint256 public constant MAXIMUM_RECIPIENT_COUNT = 100;
+  uint256 public constant MAXIMUM_RECIPIENT_COUNT = 200;
 
   struct Expenditure {
     // Recipient address.
