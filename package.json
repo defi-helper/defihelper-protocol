@@ -11,7 +11,7 @@
     "lint:sol": "solhint 'contracts/**/*.sol' && prettier -c 'contracts/**/*.sol'",
     "lint:sol:fix": "prettier --write 'contracts/**/*.sol'",
     "deploy:main": "hardhat deploy --deploy-scripts ./deploy/main --tags Protocol,Governance,GovernanceOwner",
-    "deploy:lite": "hardhat deploy --deploy-scripts ./deploy/lite --tags Protocol",
+    "deploy:lite": "hardhat deploy --deploy-scripts ./deploy/lite --tags Protocol,Governance,GovernanceOwner",
     "seed:main": "hardhat deploy --deploy-scripts ./deploy/main --tags Seed",
     "export": "node ./scripts/export.js",
     "etherscan-verify": "scripts/etherscan-verify.sh",

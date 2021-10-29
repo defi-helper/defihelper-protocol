@@ -6,8 +6,14 @@ const defaultChainId = 31337;
 
 module.exports = migration(async ({ utils: { get, execute } }) => {
   const { deployer } = await getNamedAccounts();
-  const [balance, budget, store] = await Promise.all([get('Balance'), get('Budget'), get('Store')]);
+  const [governor, balance, budget, store] = await Promise.all([
+    get('GovernorMultisig'),
+    get('Balance'),
+    get('Budget'),
+    get('Store'),
+  ]);
   const values = [
+    { method: 'setAddress', key: 'DFH:Contract:Governor', value: governor.address },
     { method: 'setAddress', key: 'DFH:Contract:Budget', value: budget.address },
     { method: 'setAddress', key: 'DFH:Contract:Balance', value: balance.address },
     { method: 'setAddress', key: 'DFH:Contract:Store', value: store.address },
@@ -45,6 +51,13 @@ module.exports = migration(async ({ utils: { get, execute } }) => {
         value: {
           56: '0x10ed43c718714eb63d5aa57b78b54704e256024e',
           97: '0xd99d1c33f9fc3444f8101754abc46c52416550d1',
+        }[network.config.chainId ?? defaultChainId],
+      },
+      {
+        method: 'setAddress',
+        key: 'Curve:Contract:Registry',
+        value: {
+          1: '0x90E00ACe148ca3b23Ac1bC8C240C2a7Dd9c2d7f5',
         }[network.config.chainId ?? defaultChainId],
       },
     ].filter(({ value }) => value !== undefined),

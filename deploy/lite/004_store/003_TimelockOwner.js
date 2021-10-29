@@ -1,11 +1,11 @@
 const { migration } = require('../../utils');
 
 module.exports = migration(async ({ utils: { read, get, execute } }) => {
-  const timelock = await get('Timelock');
-  if ((await read('Balance', {}, 'owner')) === timelock.address) {
+  const gov = await get('GovernorMultisig');
+  if ((await read('Store', {}, 'owner')) === gov.address) {
     return;
   }
 
-  await execute('Balance', {}, 'transferOwnership', timelock.address);
+  await execute('Store', {}, 'transferOwnership', gov.address);
 });
 module.exports.tags = ['GovernanceOwner'];

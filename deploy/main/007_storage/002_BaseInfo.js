@@ -59,6 +59,13 @@ module.exports = migration(async ({ utils: { get, execute } }) => {
           97: '0xd99d1c33f9fc3444f8101754abc46c52416550d1',
         }[network.config.chainId ?? defaultChainId],
       },
+      {
+        method: 'setAddress',
+        key: 'Curve:Contract:Registry',
+        value: {
+          1: '0x90E00ACe148ca3b23Ac1bC8C240C2a7Dd9c2d7f5',
+        }[network.config.chainId ?? defaultChainId],
+      },
     ].filter(({ value }) => value !== undefined),
   ];
 
