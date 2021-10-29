@@ -61,16 +61,16 @@ module.exports = {
       ],
     },
     bsc: {
-      url: process.env.ETH_BSC_NODE || 'http://127.0.0.1:8545',
+      url: process.env.BSC_NODE || 'http://127.0.0.1:8545',
       chainId: 56,
       gasPrice: 7_000_000_000,
       blockGasLimit: 6_000_000,
       accounts: [
-        ...maybeAccount(process.env.ETH_BSC_DEPLOYER),
-        ...maybeAccount(process.env.ETH_BSC_INSPECTOR),
-        ...maybeAccount(process.env.ETH_BSC_CONSUMER1),
-        ...maybeAccount(process.env.ETH_BSC_CONSUMER2),
-        ...maybeAccount(process.env.ETH_BSC_CONSUMER3),
+        ...maybeAccount(process.env.BSC_DEPLOYER),
+        ...maybeAccount(process.env.BSC_INSPECTOR),
+        ...maybeAccount(process.env.BSC_CONSUMER1),
+        ...maybeAccount(process.env.BSC_CONSUMER2),
+        ...maybeAccount(process.env.BSC_CONSUMER3),
       ],
     },
     bscTest: {
