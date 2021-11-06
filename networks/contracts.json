@@ -3,6 +3,18 @@
         "GovernanceToken": {
             "address": "0x5F2080542ab6ae7e0b06778F0B2d263006297840",
             "deployBlockNumber": 13561696
+        },
+        "GovernorBravo": {
+            "address": "0x7725c6045092DEB243ae23aFB4355f43aAC1FC22",
+            "deployBlockNumber": 13561755
+        },
+        "Timelock": {
+            "address": "0xDd69647fc0D46595b04b4082b0C760e2c98C90a2",
+            "deployBlockNumber": 13561765
+        },
+        "Treasury": {
+            "address": "0xb2A55570Ae16cb8b04432790ADa44D6008e1111a",
+            "deployBlockNumber": 13562176
         }
     },
     "3": {
