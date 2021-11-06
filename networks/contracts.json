@@ -1,4 +1,10 @@
 {
+    "1": {
+        "GovernanceToken": {
+            "address": "0x5F2080542ab6ae7e0b06778F0B2d263006297840",
+            "deployBlockNumber": 13561696
+        }
+    },
     "3": {
         "Balance": {
             "address": "0xdd4f76edF1B7Fd0707a4Cb1385092A8398bd2f81",
