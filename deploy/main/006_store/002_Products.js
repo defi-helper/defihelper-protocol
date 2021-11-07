@@ -2,9 +2,8 @@ const { migration } = require('../../utils');
 
 module.exports = migration(async ({ utils: { read, get, execute } }) => {
   const products = [
-    { id: 1, priceUSD: 100e8 },
-    { id: 2, priceUSD: 200e8 },
-    { id: 3, priceUSD: 500e8 },
+    { id: 1, priceUSD: 10e8 },
+    { id: 2, priceUSD: 100e8 },
   ];
 
   await products.reduce(async (prev, { id, priceUSD }) => {

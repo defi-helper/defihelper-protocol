@@ -1,5 +1,17 @@
 {
     "1": {
+        "Balance": {
+            "address": "0x67B6CE0aD583fd2c8c2701A2BAB3c27CB4758c1b",
+            "deployBlockNumber": 13568461
+        },
+        "Budget": {
+            "address": "0x29a265890abf4faa084c9a5a475f49a2afc3412b",
+            "deployBlockNumber": "0xcef17f"
+        },
+        "ERC1167": {
+            "address": "0x7ecFCbdeb6f195030B9Bf2ECc402f6d5433d116D",
+            "deployBlockNumber": 13568682
+        },
         "GovernanceToken": {
             "address": "0x5F2080542ab6ae7e0b06778F0B2d263006297840",
             "deployBlockNumber": 13561696
@@ -7,6 +19,18 @@
         "GovernorBravo": {
             "address": "0x7725c6045092DEB243ae23aFB4355f43aAC1FC22",
             "deployBlockNumber": 13561755
+        },
+        "ProxyFactory": {
+            "address": "0x1C438184c2746b7887E97c8093a7A79A0429E8dC",
+            "deployBlockNumber": 13568692
+        },
+        "Storage": {
+            "address": "0x5AE235502Bf1de231AfD75364670d50e3C3694A6",
+            "deployBlockNumber": 13568624
+        },
+        "Store": {
+            "address": "0xDdfbffEfacB7598Ad995D327Ea4fF2D42aCF7b77",
+            "deployBlockNumber": 13568517
         },
         "Timelock": {
             "address": "0xDd69647fc0D46595b04b4082b0C760e2c98C90a2",
