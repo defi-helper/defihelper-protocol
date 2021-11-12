@@ -60,6 +60,13 @@ module.exports = migration(async ({ utils: { get, execute } }) => {
           1: '0x90E00ACe148ca3b23Ac1bC8C240C2a7Dd9c2d7f5',
         }[network.config.chainId ?? defaultChainId],
       },
+      {
+        method: 'setAddress',
+        key: 'Joe:Contract:Router2',
+        value: {
+          43114: '0x60aE616a2155Ee3d9A68541Ba4544862310933d4',
+        }[network.config.chainId ?? defaultChainId],
+      },
     ].filter(({ value }) => value !== undefined),
   ];
 
