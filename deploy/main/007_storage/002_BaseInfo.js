@@ -37,6 +37,8 @@ module.exports = migration(async ({ utils: { get, execute } }) => {
           56: '0x0567F2323251f0Aab15c8dFb1967E4e8A7D42aeE',
           97: '0x2514895c72f50D8bd4B4F9b1110F0D6bD2c97526',
           137: '0xAB594600376Ec9fD91F8e885dADF0CE036862dE0',
+          43113: '0x5498BB86BC934c8D34FDA08E81D444153d0D06aD',
+          43114: '0x0A77230d17318075983913bC2145DB16C7366156',
         }[network.config.chainId ?? defaultChainId],
       },
       {
@@ -64,6 +66,13 @@ module.exports = migration(async ({ utils: { get, execute } }) => {
         key: 'Curve:Contract:Registry',
         value: {
           1: '0x90E00ACe148ca3b23Ac1bC8C240C2a7Dd9c2d7f5',
+        }[network.config.chainId ?? defaultChainId],
+      },
+      {
+        method: 'setAddress',
+        key: 'Joe:Contract:Router2',
+        value: {
+          43114: '0x60aE616a2155Ee3d9A68541Ba4544862310933d4',
         }[network.config.chainId ?? defaultChainId],
       },
     ].filter(({ value }) => value !== undefined),
