@@ -33,6 +33,7 @@ module.exports = migration(async ({ utils: { get, execute } }) => {
           137: '0xAB594600376Ec9fD91F8e885dADF0CE036862dE0',
           43113: '0x5498BB86BC934c8D34FDA08E81D444153d0D06aD',
           43114: '0x0A77230d17318075983913bC2145DB16C7366156',
+          80001: '0xd0D5e3DB44DE05E9F294BB0a3bEEaF030DE24Ada',
         }[network.config.chainId ?? defaultChainId],
       },
       {

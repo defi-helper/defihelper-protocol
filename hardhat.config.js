@@ -112,6 +112,32 @@ module.exports = {
         ...maybeAccount(process.env.AVALANCHE_TEST_CONSUMER3),
       ],
     },
+    polygon: {
+      url: process.env.POLYGON_NODE || 'http://127.0.0.1:8545',
+      chainId: 137,
+      gasPrice: 30_000_000_000,
+      blockGasLimit: 21_000_000,
+      accounts: [
+        ...maybeAccount(process.env.POLYGON_DEPLOYER),
+        ...maybeAccount(process.env.POLYGON_INSPECTOR),
+        ...maybeAccount(process.env.POLYGON_CONSUMER1),
+        ...maybeAccount(process.env.POLYGON_CONSUMER2),
+        ...maybeAccount(process.env.POLYGON_CONSUMER3),
+      ],
+    },
+    mumbai: {
+      url: process.env.POLYGON_MUMBAI_NODE || 'http://127.0.0.1:8545',
+      chainId: 80001,
+      gasPrice: 30_000_000_000,
+      blockGasLimit: 20_000_000,
+      accounts: [
+        ...maybeAccount(process.env.POLYGON_MUMBAI_DEPLOYER),
+        ...maybeAccount(process.env.POLYGON_MUMBAI_INSPECTOR),
+        ...maybeAccount(process.env.POLYGON_MUMBAI_CONSUMER1),
+        ...maybeAccount(process.env.POLYGON_MUMBAI_CONSUMER2),
+        ...maybeAccount(process.env.POLYGON_MUMBAI_CONSUMER3),
+      ],
+    },
   },
   namedAccounts: {
     deployer: {
@@ -120,8 +146,10 @@ module.exports = {
       3: 0,
       56: 0,
       97: 0,
+      137: 0,
       43113: 0,
       43114: 0,
+      80001: 0,
     },
     priceFeed: {
       default: '0x0000000000000000000000000000000000000000',
@@ -129,8 +157,10 @@ module.exports = {
       3: '0x64125B3eDF8C778c0814A6cd368a133764B1e156',
       56: '0x0567F2323251f0Aab15c8dFb1967E4e8A7D42aeE',
       97: '0x2514895c72f50D8bd4B4F9b1110F0D6bD2c97526',
+      137: '0xAB594600376Ec9fD91F8e885dADF0CE036862dE0',
       43113: '0x5498BB86BC934c8D34FDA08E81D444153d0D06aD',
       43114: '0x0A77230d17318075983913bC2145DB16C7366156',
+      80001: '0xd0D5e3DB44DE05E9F294BB0a3bEEaF030DE24Ada',
     },
     inspector: {
       default: 1,
@@ -138,8 +168,10 @@ module.exports = {
       3: 1,
       56: 1,
       97: 1,
+      137: 1,
       43113: 1,
       43114: 1,
+      80001: 1,
     },
     consumer1: {
       default: 2,
@@ -147,8 +179,10 @@ module.exports = {
       3: 2,
       56: 2,
       97: 2,
+      137: 2,
       43113: 2,
       43114: 2,
+      80001: 2,
     },
     consumer2: {
       default: 3,
@@ -156,8 +190,10 @@ module.exports = {
       3: 3,
       56: 3,
       97: 3,
+      137: 3,
       43113: 3,
       43114: 3,
+      80001: 3,
     },
     consumer3: {
       default: 4,
@@ -165,8 +201,10 @@ module.exports = {
       3: 4,
       56: 4,
       97: 4,
+      137: 4,
       43113: 4,
       43114: 4,
+      80001: 4,
     },
   },
 };
