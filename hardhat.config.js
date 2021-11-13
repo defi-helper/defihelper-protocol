@@ -86,6 +86,19 @@ module.exports = {
         ...maybeAccount(process.env.BSC_TEST_CONSUMER3),
       ],
     },
+    avalanche: {
+      url: process.env.AVALANCHE_NODE || 'http://127.0.0.1:8545',
+      chainId: 43114,
+      gasPrice: 25_000_000,
+      blockGasLimit: 8_000_000,
+      accounts: [
+        ...maybeAccount(process.env.AVALANCHE_DEPLOYER),
+        ...maybeAccount(process.env.AVALANCHE_INSPECTOR),
+        ...maybeAccount(process.env.AVALANCHE_CONSUMER1),
+        ...maybeAccount(process.env.AVALANCHE_CONSUMER2),
+        ...maybeAccount(process.env.AVALANCHE_CONSUMER3),
+      ],
+    },
   },
   namedAccounts: {
     deployer: {
@@ -94,6 +107,7 @@ module.exports = {
       3: 0,
       56: 0,
       97: 0,
+      43114: 0,
     },
     priceFeed: {
       default: '0x0000000000000000000000000000000000000000',
@@ -101,6 +115,7 @@ module.exports = {
       3: '0x64125B3eDF8C778c0814A6cd368a133764B1e156',
       56: '0x0567F2323251f0Aab15c8dFb1967E4e8A7D42aeE',
       97: '0x2514895c72f50D8bd4B4F9b1110F0D6bD2c97526',
+      43114: '0x0A77230d17318075983913bC2145DB16C7366156',
     },
     inspector: {
       default: 1,
@@ -108,6 +123,7 @@ module.exports = {
       3: 1,
       56: 1,
       97: 1,
+      43114: 1,
     },
     consumer1: {
       default: 2,
@@ -115,6 +131,7 @@ module.exports = {
       3: 2,
       56: 2,
       97: 2,
+      43114: 2,
     },
     consumer2: {
       default: 3,
@@ -122,6 +139,7 @@ module.exports = {
       3: 3,
       56: 3,
       97: 3,
+      43114: 3,
     },
     consumer3: {
       default: 4,
@@ -129,6 +147,7 @@ module.exports = {
       3: 4,
       56: 4,
       97: 4,
+      43114: 4,
     },
   },
 };
