@@ -138,6 +138,32 @@ module.exports = {
         ...maybeAccount(process.env.POLYGON_MUMBAI_CONSUMER3),
       ],
     },
+    moonriver: {
+      url: process.env.MOONRIVER_NODE || 'http://127.0.0.1:8545',
+      chainId: 1285,
+      gasPrice: 1_000_000_000,
+      blockGasLimit: 15_000_000,
+      accounts: [
+        ...maybeAccount(process.env.MOONRIVER_DEPLOYER),
+        ...maybeAccount(process.env.MOONRIVER_INSPECTOR),
+        ...maybeAccount(process.env.MOONRIVER_CONSUMER1),
+        ...maybeAccount(process.env.MOONRIVER_CONSUMER2),
+        ...maybeAccount(process.env.MOONRIVER_CONSUMER3),
+      ],
+    },
+    moonbase: {
+      url: process.env.MOONBASE_NODE || 'http://127.0.0.1:8545',
+      chainId: 1287,
+      gasPrice: 1_000_000_000,
+      blockGasLimit: 15_000_000,
+      accounts: [
+        ...maybeAccount(process.env.MOONBASE_DEPLOYER),
+        ...maybeAccount(process.env.MOONBASE_INSPECTOR),
+        ...maybeAccount(process.env.MOONBASE_CONSUMER1),
+        ...maybeAccount(process.env.MOONBASE_CONSUMER2),
+        ...maybeAccount(process.env.MOONBASE_CONSUMER3),
+      ],
+    },
   },
   namedAccounts: {
     deployer: {
