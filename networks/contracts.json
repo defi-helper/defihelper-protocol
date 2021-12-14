@@ -151,6 +151,78 @@
             "deployBlockNumber": 13932940
         }
     },
+    "1285": {
+        "Balance": {
+            "address": "0xF28C8D44C1dD837FEc8a93a7BCD540552e954E7B",
+            "deployBlockNumber": 1087742
+        },
+        "Budget": {
+            "address": "0xe890Dbb2EA4dd17ec0D1F9a2DD6a756D2C637f97",
+            "deployBlockNumber": 1087753
+        },
+        "ERC1167": {
+            "address": "0xd8C830401453796e043b35B628EF55A18817D9bD",
+            "deployBlockNumber": 1087790
+        },
+        "GovernorMultisig": {
+            "address": "0xE5e4765eeA4Aea14e4C894a79d517277d6E241EE",
+            "deployBlockNumber": 1087734
+        },
+        "ProxyFactory": {
+            "address": "0x19d4448784c8c189b7479Ea96a8497B6E5e793f5",
+            "deployBlockNumber": 1087792
+        },
+        "Storage": {
+            "address": "0x9B8583F71240ea6fa1A2a1e60BF4CE7DAfd6D5E4",
+            "deployBlockNumber": 1087772
+        },
+        "Store": {
+            "address": "0x0473d8Af0deAeb83B8687c0828e736A0f92d33F8",
+            "deployBlockNumber": 1087764
+        },
+        "Treasury": {
+            "address": "0x31E723E3ff71D70cAb6a914BaB3d901d36497610",
+            "deployBlockNumber": 1087738
+        }
+    },
+    "1287": {
+        "Balance": {
+            "address": "0xBD6F3c7D03aca8141bc24aaf096bbAFce277a85f",
+            "deployBlockNumber": 1351126
+        },
+        "Budget": {
+            "address": "0x77fB5E70c95430cf9df0949169ce47EF050D4B10",
+            "deployBlockNumber": 1351144
+        },
+        "ERC1167": {
+            "address": "0xd8C830401453796e043b35B628EF55A18817D9bD",
+            "deployBlockNumber": 1351200
+        },
+        "GovernorMultisig": {
+            "address": "0x1F59Ee3B1ff055Be0b84BcB6D7beAa7f984fFf2e",
+            "deployBlockNumber": 1351114
+        },
+        "PriceFeedMock": {
+            "address": "0xb19C5dd2cB210ff1Bd3f79126824b2cbfA4E7443",
+            "deployBlockNumber": 1351160
+        },
+        "ProxyFactory": {
+            "address": "0x19d4448784c8c189b7479Ea96a8497B6E5e793f5",
+            "deployBlockNumber": 1351203
+        },
+        "Storage": {
+            "address": "0xf4F3Aa8F92227dE22D647beF0aC1B5Cba1878fa9",
+            "deployBlockNumber": 1351177
+        },
+        "Store": {
+            "address": "0x295425B90077252D52c35F15eABfb5C6d3178a4C",
+            "deployBlockNumber": 1351165
+        },
+        "Treasury": {
+            "address": "0x309e4D1147Ee848527dbcC0502008FaF274B6C6c",
+            "deployBlockNumber": 1351120
+        }
+    },
     "43113": {
         "Balance": {
             "address": "0x1E46B649d6651b3892217Dd1EFd2a3e78f4D904B",
@@ -217,6 +289,40 @@
         "Treasury": {
             "address": "0xDd69647fc0D46595b04b4082b0C760e2c98C90a2",
             "deployBlockNumber": 6885265
+        }
+    },
+    "80001": {
+        "Balance": {
+            "address": "0x1E46B649d6651b3892217Dd1EFd2a3e78f4D904B",
+            "deployBlockNumber": 21412588
+        },
+        "Budget": {
+            "address": "0x64bA6C02321D77AD00308F06aD72beE7149b39A6",
+            "deployBlockNumber": 21412610
+        },
+        "ERC1167": {
+            "address": "0x62cA8Ec7e7a6852D93Fb4e4b5583d6D7b2c10b7F",
+            "deployBlockNumber": 21412679
+        },
+        "GovernorMultisig": {
+            "address": "0x5F2080542ab6ae7e0b06778F0B2d263006297840",
+            "deployBlockNumber": 21412573
+        },
+        "ProxyFactory": {
+            "address": "0xbbaDa894933398c1Fca03bdd8B872bb444A483f2",
+            "deployBlockNumber": 21412682
+        },
+        "Storage": {
+            "address": "0xDdfbffEfacB7598Ad995D327Ea4fF2D42aCF7b77",
+            "deployBlockNumber": 21412648
+        },
+        "Store": {
+            "address": "0x040ccf6CA8CCFEd2eA741F1Dd76245314946f078",
+            "deployBlockNumber": 21412632
+        },
+        "Treasury": {
+            "address": "0xDd69647fc0D46595b04b4082b0C760e2c98C90a2",
+            "deployBlockNumber": 21412581
         }
     }
 }
