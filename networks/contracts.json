@@ -225,36 +225,40 @@
     },
     "43113": {
         "Balance": {
-            "address": "0x1E46B649d6651b3892217Dd1EFd2a3e78f4D904B",
-            "deployBlockNumber": 2486571
+            "address": "0xF11438cFDC2B8463A1F4d79C3825930a233C76bd",
+            "deployBlockNumber": 5961049
         },
         "Budget": {
-            "address": "0x64bA6C02321D77AD00308F06aD72beE7149b39A6",
-            "deployBlockNumber": 2486586
+            "address": "0x436ddD2E33B45367Df455ee9dA5D73850650bd7e",
+            "deployBlockNumber": 5961072
+        },
+        "BuyLiquidity": {
+            "address": "0xC1Ea5c99bA1431f67e1052c9D8471A74911c61c3",
+            "deployBlockNumber": 5961160
         },
         "ERC1167": {
-            "address": "0x62cA8Ec7e7a6852D93Fb4e4b5583d6D7b2c10b7F",
-            "deployBlockNumber": 2486642
+            "address": "0x8586719c29A043C8305252de4DFfE94F43245590",
+            "deployBlockNumber": 5961152
         },
         "GovernorMultisig": {
-            "address": "0x5F2080542ab6ae7e0b06778F0B2d263006297840",
-            "deployBlockNumber": 2486550
+            "address": "0xbd6f3c7d03aca8141bc24aaf096bbafce277a85f",
+            "deployBlockNumber": "0x5af54b"
         },
         "ProxyFactory": {
-            "address": "0xbbaDa894933398c1Fca03bdd8B872bb444A483f2",
-            "deployBlockNumber": 2486647
+            "address": "0xdcEBCae8c537c30a43DCC336278220d99540C00B",
+            "deployBlockNumber": 5961157
         },
         "Storage": {
-            "address": "0xDdfbffEfacB7598Ad995D327Ea4fF2D42aCF7b77",
-            "deployBlockNumber": 2486613
+            "address": "0x67C2f8627C50139BBc893708b7Fb77eA3D3bF87F",
+            "deployBlockNumber": 5961116
         },
         "Store": {
-            "address": "0x040ccf6CA8CCFEd2eA741F1Dd76245314946f078",
-            "deployBlockNumber": 2486599
+            "address": "0x9E3B7cf2596F418DFf7168e377878eCb9FcA67de",
+            "deployBlockNumber": 5961100
         },
         "Treasury": {
-            "address": "0xDd69647fc0D46595b04b4082b0C760e2c98C90a2",
-            "deployBlockNumber": 2486568
+            "address": "0x7ecFCbdeb6f195030B9Bf2ECc402f6d5433d116D",
+            "deployBlockNumber": 5961042
         }
     },
     "43114": {
