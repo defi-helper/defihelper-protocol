@@ -26,13 +26,16 @@
           "storageLayout",
           "evm.gasEstimates"
         ],
-        "": [
-          "ast"
-        ]
+        "": ["ast"]
       }
     },
     "metadata": {
       "useLiteralContent": true
+    },
+    "libraries": {
+      "contracts/proxy/ERC1167.sol": {
+        "ERC1167": "0x62cA8Ec7e7a6852D93Fb4e4b5583d6D7b2c10b7F"
+      }
     }
   }
 }
