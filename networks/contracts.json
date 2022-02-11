@@ -266,6 +266,10 @@
             "address": "0x64bA6C02321D77AD00308F06aD72beE7149b39A6",
             "deployBlockNumber": 6885300
         },
+        "BuyLiquidity": {
+            "address": "0x975B07f95ce4F0A3E042769b311264A941568a0E",
+            "deployBlockNumber": 10777499
+        },
         "ERC1167": {
             "address": "0xbbaDa894933398c1Fca03bdd8B872bb444A483f2",
             "deployBlockNumber": 6885389
