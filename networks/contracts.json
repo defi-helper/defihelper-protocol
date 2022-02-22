@@ -92,6 +92,10 @@
             "address": "0x98af329C07E1F3cb4fd32f52B603F401bBF0f23C",
             "deployBlockNumber": 12474624
         },
+        "BuyLiquidity": {
+            "address": "0x386bE298d4C15D89Fff23F9C9BB481e93B05BAc4",
+            "deployBlockNumber": 15480679
+        },
         "ERC1167": {
             "address": "0x1F59Ee3B1ff055Be0b84BcB6D7beAa7f984fFf2e",
             "deployBlockNumber": 12474693
@@ -159,6 +163,10 @@
         "Budget": {
             "address": "0xe890Dbb2EA4dd17ec0D1F9a2DD6a756D2C637f97",
             "deployBlockNumber": 1087753
+        },
+        "BuyLiquidity": {
+            "address": "0xe1FEfee11adAC616090BB9c0a45967e78607Aa21",
+            "deployBlockNumber": 1514604
         },
         "ERC1167": {
             "address": "0xd8C830401453796e043b35B628EF55A18817D9bD",
