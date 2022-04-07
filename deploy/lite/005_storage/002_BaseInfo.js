@@ -27,6 +27,7 @@ module.exports = migration(async ({ utils: { get, execute } }) => {
           1: '0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419',
           3: '0x32FAC1bc00973413c2714734B0b48Dd0CC68F63D',
           4: '0x78F9e60608bF48a1155b4B2A5e31F32318a1d85F',
+          10: '0x13e3Ee699D1909E989722E753853AE30b17e08c5',
           42: '0x9326BFA02ADD2366b30bacB125260Af641031331',
           56: '0x0567F2323251f0Aab15c8dFb1967E4e8A7D42aeE',
           97: '0x2514895c72f50D8bd4B4F9b1110F0D6bD2c97526',
@@ -35,40 +36,6 @@ module.exports = migration(async ({ utils: { get, execute } }) => {
           43113: '0x5498BB86BC934c8D34FDA08E81D444153d0D06aD',
           43114: '0x0A77230d17318075983913bC2145DB16C7366156',
           80001: '0xd0D5e3DB44DE05E9F294BB0a3bEEaF030DE24Ada',
-        }[network.config.chainId ?? defaultChainId],
-      },
-      {
-        method: 'setAddress',
-        key: 'UniswapV2:Contract:Router2',
-        value: {
-          1: '0x7a250d5630b4cf539739df2c5dacb4c659f2488d',
-          3: '0x7a250d5630b4cf539739df2c5dacb4c659f2488d',
-          4: '0x7a250d5630b4cf539739df2c5dacb4c659f2488d',
-          5: '0x7a250d5630b4cf539739df2c5dacb4c659f2488d',
-          42: '0x7a250d5630b4cf539739df2c5dacb4c659f2488d',
-          [defaultChainId]: '0x7a250d5630b4cf539739df2c5dacb4c659f2488d',
-        }[network.config.chainId ?? defaultChainId],
-      },
-      {
-        method: 'setAddress',
-        key: 'PancakeSwapV2:Contract:Router2',
-        value: {
-          56: '0x10ed43c718714eb63d5aa57b78b54704e256024e',
-          97: '0xd99d1c33f9fc3444f8101754abc46c52416550d1',
-        }[network.config.chainId ?? defaultChainId],
-      },
-      {
-        method: 'setAddress',
-        key: 'Curve:Contract:Registry',
-        value: {
-          1: '0x90E00ACe148ca3b23Ac1bC8C240C2a7Dd9c2d7f5',
-        }[network.config.chainId ?? defaultChainId],
-      },
-      {
-        method: 'setAddress',
-        key: 'Joe:Contract:Router2',
-        value: {
-          43114: '0x60aE616a2155Ee3d9A68541Ba4544862310933d4',
         }[network.config.chainId ?? defaultChainId],
       },
     ].filter(({ value }) => value !== undefined),
