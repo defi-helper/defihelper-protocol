@@ -19,6 +19,7 @@ module.exports = migration(async ({ utils: { get, execute } }) => {
     { method: 'setAddress', key: 'DFH:Contract:Store', value: store.address },
     { method: 'setAddress', key: 'DFH:Pauser', value: deployer },
     { method: 'setUint', key: 'DFH:Fee:Automate', value: 1e8 },
+    { method: 'setUint', key: 'DFH:Fee:Automate:BuyLiquidity', value: 1e8 },
     ...[
       {
         method: 'setAddress',
