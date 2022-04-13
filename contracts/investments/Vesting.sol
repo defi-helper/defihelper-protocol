@@ -23,6 +23,12 @@ contract Vesting is ReentrancyGuard {
   /// @notice Block number of last claim.
   uint256 public lastClaim;
 
+  event Initialized(address indexed owner);
+
+  event Distribute(address indexed recipient, uint256 amount, uint256 duration);
+
+  event Claim(uint256 amount);
+
   /**
    * @dev Throws if called by any account other than the owner.
    */
@@ -47,6 +53,7 @@ contract Vesting is ReentrancyGuard {
     initialized = true;
     owner = tx.origin;
     token = GovernanceToken(_token);
+    emit Initialized(tx.origin);
   }
 
   /**
@@ -71,6 +78,7 @@ contract Vesting is ReentrancyGuard {
     rate = amount / duration;
     periodFinish = block.number + duration;
     lastClaim = block.number;
+    emit Distribute(recipient, amount, duration);
   }
 
   /**
@@ -95,5 +103,6 @@ contract Vesting is ReentrancyGuard {
     require(amount > 0, "Vesting::claim: empty");
     lastClaim = lastTimeRewardApplicable();
     token.transfer(owner, amount);
+    emit Claim(amount);
   }
 }
