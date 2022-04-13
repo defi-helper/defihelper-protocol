@@ -21,6 +21,8 @@ function logDeploy({ contractName, args, receipt }) {
       .toFormat()} ETH
 `,
   );
+
+  return receipt;
 }
 
 function logExecute(contract, method, args, receipt) {
@@ -40,6 +42,8 @@ function logExecute(contract, method, args, receipt) {
       .toFormat()} ETH
 `,
   );
+
+  return receipt;
 }
 
 function migration(handler) {
