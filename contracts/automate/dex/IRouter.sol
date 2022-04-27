@@ -34,4 +34,6 @@ interface IRouter {
       uint256 amountB,
       uint256 liquidity
     );
+
+  function getAmountsOut(uint256 amountIn, address[] memory path) external view returns (uint256[] memory amounts);
 }

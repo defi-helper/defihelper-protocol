@@ -7,8 +7,14 @@ import "../IRouter.sol";
 contract RouterMock is IRouter {
   address public lpToken;
 
+  mapping(address => uint256) public prices;
+
   constructor(address _lpToken) {
     lpToken = _lpToken;
+  }
+
+  function setPrice(address token, uint256 price) external {
+    prices[token] = price;
   }
 
   function swapExactTokensForTokens(
@@ -19,7 +25,8 @@ contract RouterMock is IRouter {
     uint256
   ) public override returns (uint256[] memory amounts) {
     IERC20(path[0]).transferFrom(msg.sender, address(this), amountIn);
-    IERC20(path[path.length - 1]).transfer(to, amountOutMin);
+    uint256 price = prices[path[path.length - 1]];
+    IERC20(path[path.length - 1]).transfer(to, price != 0 ? price * amountIn : amountOutMin);
 
     return amounts;
   }
@@ -58,5 +65,17 @@ contract RouterMock is IRouter {
     IERC20(tokenB).transferFrom(msg.sender, address(this), amountB);
     liquidity = 10e18;
     IERC20(lpToken).transfer(to, liquidity);
+  }
+
+  function getAmountsOut(uint256 amountIn, address[] memory path)
+    external
+    view
+    override
+    returns (uint256[] memory amounts)
+  {
+    amounts = new uint256[](path.length);
+    for (uint256 i = 0; i < path.length; i++) {
+      amounts[i] = i == path.length - 1 ? amountIn * prices[path[path.length - 1]] : amountIn;
+    }
   }
 }
