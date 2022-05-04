@@ -60,6 +60,19 @@ module.exports = {
         ...maybeAccount(process.env.ETH_ROPSTEN_CONSUMER3),
       ],
     },
+    rinkeby: {
+      url: process.env.ETH_RINKEBY_NODE || 'http://127.0.0.1:8545',
+      chainId: 4,
+      gasPrice: 25_000_000_000,
+      blockGasLimit: 6_000_000,
+      accounts: [
+        ...maybeAccount(process.env.ETH_RINKEBY_DEPLOYER),
+        ...maybeAccount(process.env.ETH_RINKEBY_INSPECTOR),
+        ...maybeAccount(process.env.ETH_RINKEBY_CONSUMER1),
+        ...maybeAccount(process.env.ETH_RINKEBY_CONSUMER2),
+        ...maybeAccount(process.env.ETH_RINKEBY_CONSUMER3),
+      ],
+    },
     bsc: {
       url: process.env.BSC_NODE || 'http://127.0.0.1:8545',
       chainId: 56,
