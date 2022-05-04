@@ -50,7 +50,7 @@ module.exports = {
     ropsten: {
       url: process.env.ETH_ROPSTEN_NODE || 'http://127.0.0.1:8545',
       chainId: 3,
-      gasPrice: 45_000_000_000,
+      gasPrice: 100_000_000_000,
       blockGasLimit: 6_000_000,
       accounts: [
         ...maybeAccount(process.env.ETH_ROPSTEN_DEPLOYER),
