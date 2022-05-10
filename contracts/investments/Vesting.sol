@@ -92,7 +92,8 @@ contract Vesting is ReentrancyGuard {
    * @return Earned tokens.
    */
   function earned() public view onlyInitialized returns (uint256) {
-    return rate * (lastTimeRewardApplicable() - lastClaim);
+    return
+      block.number > periodFinish ? token.balanceOf(address(this)) : rate * (lastTimeRewardApplicable() - lastClaim);
   }
 
   /**
