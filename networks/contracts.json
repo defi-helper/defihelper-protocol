@@ -39,6 +39,10 @@
         "Treasury": {
             "address": "0xb2A55570Ae16cb8b04432790ADa44D6008e1111a",
             "deployBlockNumber": 13562176
+        },
+        "Vesting": {
+            "address": "0x0473d8af0deaeb83b8687c0828e736a0f92d33f8",
+            "deployBlockNumber": "0xe14dc1"
         }
     },
     "3": {
