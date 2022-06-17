@@ -104,6 +104,30 @@
             "address": "0x87b9C47Ce045CF665FdeC1203E48235a97f03f1a",
             "deployBlockNumber": 10617617
         },
+        "DelegatorAdvisors": {
+            "address": "0x554Be917F15dbC35A25B7004c38B7fB07fE8BB75",
+            "deployBlockNumber": 10868339
+        },
+        "DelegatorDevelopment": {
+            "address": "0x954DFbFDFa65D908098a9Fc8C4C700263d833c8A",
+            "deployBlockNumber": 10868335
+        },
+        "DelegatorEarlyEcosystem": {
+            "address": "0x9bb21f44d5C92407FD4a79261b94F92373dd59dc",
+            "deployBlockNumber": 10868338
+        },
+        "DelegatorLiquidity": {
+            "address": "0x127639735F82627eB65536d3e4d1AE23edc8D93D",
+            "deployBlockNumber": 10868340
+        },
+        "DelegatorMarketing": {
+            "address": "0x985F1480870A61E27e206D6F4829346185d30Df4",
+            "deployBlockNumber": 10868337
+        },
+        "DelegatorTeam": {
+            "address": "0x0b76E583982692723504Ad2409b099C02D2b0758",
+            "deployBlockNumber": 10868336
+        },
         "ERC1167": {
             "address": "0x9A834D517Ac523389F336D17018246A8a58299A1",
             "deployBlockNumber": 10617614
