@@ -19,14 +19,6 @@ contract Delegator is Ownable {
   }
 
   /**
-   * @notice Lock tokens on contract.
-   * @param amount Amount token.
-   */
-  function lock(uint256 amount) external {
-    token.transferFrom(msg.sender, address(this), amount);
-  }
-
-  /**
    * @notice Unlock tokens and transfer to recipient.
    * @param recipient Recipient address.
    * @param amount Amount token.
