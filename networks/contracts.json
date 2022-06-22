@@ -8,6 +8,30 @@
             "address": "0x29a265890abf4faa084c9a5a475f49a2afc3412b",
             "deployBlockNumber": "0xcef17f"
         },
+        "DelegatorAdvisors": {
+            "address": "0xCC4FC7c019515cc07710942e66979873E70C116b",
+            "deployBlockNumber": 15007790
+        },
+        "DelegatorDevelopment": {
+            "address": "0x36d97da2a1925681548b7b8893f6c18264ecb4a7",
+            "deployBlockNumber": "0xe50026"
+        },
+        "DelegatorEarlyEcosystem": {
+            "address": "0xD20f5F19917a8fC57272b4970756304dF0F18B55",
+            "deployBlockNumber": 15007785
+        },
+        "DelegatorLiquidity": {
+            "address": "0x9B1A46Dc9C0fB01cC488a001755Fd92Bb3FAA4A3",
+            "deployBlockNumber": 15007792
+        },
+        "DelegatorMarketing": {
+            "address": "0x555055F47036e995F4E35e7E6E346fCc2dd60FAe",
+            "deployBlockNumber": 15007784
+        },
+        "DelegatorTeam": {
+            "address": "0x79385A0D5E799fD67b527692bdCfE38cdC8454B5",
+            "deployBlockNumber": 15007783
+        },
         "ERC1167": {
             "address": "0x7ecFCbdeb6f195030B9Bf2ECc402f6d5433d116D",
             "deployBlockNumber": 13568682
