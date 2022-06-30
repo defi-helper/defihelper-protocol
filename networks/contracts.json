@@ -67,6 +67,10 @@
         "Vesting": {
             "address": "0x0473d8af0deaeb83b8687c0828e736a0f92d33f8",
             "deployBlockNumber": "0xe14dc1"
+        },
+        "VestingPreSeedAdvisor": {
+            "address": "0x01C08145D1cdDE89c077Ec4B0266fB35Cb7451b5",
+            "deployBlockNumber": 15048942
         }
     },
     "3": {
@@ -191,6 +195,10 @@
         "Vesting": {
             "address": "0x3D7Fc6201E5023D081712fFa26159CBa9186854a",
             "deployBlockNumber": 10660061
+        },
+        "VestingPreSeedAdvisor": {
+            "address": "0xa2deae620F0FC1e15863389c72a94Eb1D856957A",
+            "deployBlockNumber": 10942638
         }
     },
     "10": {
