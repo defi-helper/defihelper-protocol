@@ -20,7 +20,7 @@ describe('Vesting.claim', function () {
     const Vesting = await ethers.getContractFactory('Vesting');
     vesting = await Vesting.deploy();
     await vesting.deployed();
-    await vesting.init(token.address)
+    await vesting.init(token.address, deployer.address);
 
     await token.approve(vesting.address, amount.toFixed(0));
     await vesting.distribute(owner.address, amount.toFixed(0), duration);

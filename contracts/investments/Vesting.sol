@@ -48,12 +48,12 @@ contract Vesting is ReentrancyGuard {
   /**
    * @param _token Vesting token.
    */
-  function init(address _token) external {
+  function init(address _token, address _distributor) external {
     require(!initialized, "Vesting::init: contract already initialized");
     initialized = true;
-    owner = tx.origin;
+    owner = _distributor;
     token = GovernanceToken(_token);
-    emit Initialized(tx.origin);
+    emit Initialized(_distributor);
   }
 
   /**
