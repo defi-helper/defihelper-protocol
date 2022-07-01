@@ -65,12 +65,12 @@
             "deployBlockNumber": 13562176
         },
         "Vesting": {
-            "address": "0x0473d8af0deaeb83b8687c0828e736a0f92d33f8",
-            "deployBlockNumber": "0xe14dc1"
+            "address": "0xB8bb7AdEb94cD0233672410AF599CF4934EC7812",
+            "deployBlockNumber": 15055423
         },
         "VestingPreSeedAdvisor": {
-            "address": "0x01C08145D1cdDE89c077Ec4B0266fB35Cb7451b5",
-            "deployBlockNumber": 15048942
+            "address": "0x0D41bcB99Daea7908a74C0873D5182823a52BD40",
+            "deployBlockNumber": 15055426
         }
     },
     "3": {
@@ -193,12 +193,12 @@
             "deployBlockNumber": 10617559
         },
         "Vesting": {
-            "address": "0x3D7Fc6201E5023D081712fFa26159CBa9186854a",
-            "deployBlockNumber": 10660061
+            "address": "0xa57fEd13d1558116E90009f872AeC868D710D605",
+            "deployBlockNumber": 10947039
         },
         "VestingPreSeedAdvisor": {
-            "address": "0xa2deae620F0FC1e15863389c72a94Eb1D856957A",
-            "deployBlockNumber": 10942638
+            "address": "0x58a1D9a847fd7104a14aE3D12095369Ad8e8E722",
+            "deployBlockNumber": 10947041
         }
     },
     "10": {
