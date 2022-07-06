@@ -9,7 +9,7 @@ const nextBlock = () => ethers.provider.send('evm_mine');
 describe('Vesting.claim', function () {
   let vesting, token, deployer, owner;
   const amount = new bn('50');
-  const duration = 5;
+  const duration = 6;
   before(async function () {
     [deployer, owner] = await ethers.getSigners();
 
@@ -20,7 +20,7 @@ describe('Vesting.claim', function () {
     const Vesting = await ethers.getContractFactory('Vesting');
     vesting = await Vesting.deploy();
     await vesting.deployed();
-    await vesting.init(token.address)
+    await vesting.init(token.address, deployer.address);
 
     await token.approve(vesting.address, amount.toFixed(0));
     await vesting.distribute(owner.address, amount.toFixed(0), duration);
@@ -32,7 +32,7 @@ describe('Vesting.claim', function () {
 
   it('claim: should claim tokens', async function () {
     strictEqual(
-      '10',
+      '8',
       await vesting
         .earned()
         .then(toBN)
@@ -50,7 +50,7 @@ describe('Vesting.claim', function () {
 
     await nextBlock();
     strictEqual(
-      '20',
+      '16',
       await vesting
         .earned()
         .then(toBN)
@@ -68,7 +68,7 @@ describe('Vesting.claim', function () {
       'Invalid 3 earned',
     );
     strictEqual(
-      '30',
+      '24',
       await token
         .balanceOf(owner.address)
         .then(toBN)
@@ -81,7 +81,7 @@ describe('Vesting.claim', function () {
     await nextBlock();
     await nextBlock();
     strictEqual(
-      '20',
+      '26',
       await vesting
         .earned()
         .then(toBN)

@@ -109,6 +109,24 @@ contract BuyLiquidity is Ownable {
     return (feeUSD * (10**18)) / uint256(answer);
   }
 
+  function _payCommission() internal {
+    uint256 payFee = fee();
+    require(msg.value >= payFee, "BuyLiquidity::_payCommission: insufficient funds to pay commission");
+    treasury.transfer(payFee);
+    if (msg.value > payFee) {
+      payable(msg.sender).transfer(msg.value - payFee);
+    }
+  }
+
+  function _returnRemainder(address[3] memory tokens) internal {
+    for (uint256 i = 0; i < tokens.length; i++) {
+      uint256 tokenBalance = IERC20(tokens[i]).balanceOf(address(this));
+      if (tokenBalance > 0) {
+        IERC20(tokens[i]).transfer(msg.sender, tokenBalance);
+      }
+    }
+  }
+
   function buyLiquidity(
     uint256 amount,
     address router,
@@ -123,23 +141,17 @@ contract BuyLiquidity is Ownable {
     );
     require(swap0.path[0] == swap1.path[0], "BuyLiquidity::buyLiqudity: start token not equals");
 
-    // Pay commission
-    uint256 payFee = fee();
-    require(msg.value >= payFee, "BuyLiquidity::buyLiqudity: insufficient funds to pay commission");
-    treasury.transfer(payFee);
-    if (msg.value > payFee) {
-      payable(msg.sender).transfer(msg.value - payFee);
-    }
+    _payCommission();
 
-    // Get amount
+    // Get tokens in
     address token0 = to.token0();
     require(swap0.path[swap0.path.length - 1] == token0, "BuyLiquidity::buyLiqudity: invalid token0");
     address token1 = to.token1();
     require(swap1.path[swap1.path.length - 1] == token1, "BuyLiquidity::buyLiqudity: invalid token1");
-    IERC20(swap0.path[0]).transferFrom(msg.sender, address(this), amount);
-    IERC20(swap0.path[0]).approve(router, amount);
 
     // Swap tokens
+    IERC20(swap0.path[0]).transferFrom(msg.sender, address(this), amount);
+    IERC20(swap0.path[0]).approve(router, amount);
     uint256 amount0In = amount / 2;
     _swap(router, amount0In, swap0.outMin, swap0.path, deadline);
     uint256 amount1In = amount - amount0In;
@@ -153,17 +165,47 @@ contract BuyLiquidity is Ownable {
     IRouter(router).addLiquidity(token0, token1, amount0In, amount1In, 0, 0, msg.sender, deadline);
 
     // Return remainder
-    uint256 tokenBalance = IERC20(token0).balanceOf(address(this));
-    if (tokenBalance > 0) {
-      IERC20(token0).transfer(msg.sender, tokenBalance);
-    }
-    tokenBalance = IERC20(token1).balanceOf(address(this));
-    if (tokenBalance > 0) {
-      IERC20(token1).transfer(msg.sender, tokenBalance);
-    }
-    tokenBalance = IERC20(swap0.path[0]).balanceOf(address(this));
-    if (tokenBalance > 0) {
-      IERC20(swap0.path[0]).transfer(msg.sender, tokenBalance);
-    }
+    _returnRemainder([token0, token1, swap0.path[0]]);
+  }
+
+  function sellLiquidity(
+    uint256 amount,
+    address router,
+    Swap memory swap0,
+    Swap memory swap1,
+    IPair from,
+    uint256 deadline
+  ) external payable {
+    require(
+      info.getBool(keccak256(abi.encodePacked("DFH:Contract:BuyLiquidity:allowedRouter:", router))),
+      "BuyLiquidity::sellLiquidity: invalid router address"
+    );
+    require(
+      swap0.path[swap0.path.length - 1] == swap1.path[swap1.path.length - 1],
+      "BuyLiquidity::sellLiqudity: end token not equals"
+    );
+
+    _payCommission();
+
+    // Get tokens in
+    address token0 = from.token0();
+    require(swap0.path[0] == token0, "BuyLiquidity::sellLiqudity: invalid token0");
+    address token1 = from.token1();
+    require(swap1.path[0] == token1, "BuyLiquidity::sellLiqudity: invalid token1");
+
+    // Remove liquidity
+    from.transferFrom(msg.sender, address(this), amount);
+    from.approve(router, amount);
+    IRouter(router).removeLiquidity(token0, token1, amount, 0, 0, address(this), deadline);
+
+    // Swap tokens
+    uint256 amount0In = IERC20(token0).balanceOf(address(this));
+    IERC20(token0).approve(router, amount0In);
+    _swap(router, amount0In, swap0.outMin, swap0.path, deadline);
+    uint256 amount1In = IERC20(token1).balanceOf(address(this));
+    IERC20(token1).approve(router, amount1In);
+    _swap(router, amount1In, swap1.outMin, swap1.path, deadline);
+
+    _returnRemainder([token0, token1, swap0.path[swap0.path.length - 1]]);
   }
 }

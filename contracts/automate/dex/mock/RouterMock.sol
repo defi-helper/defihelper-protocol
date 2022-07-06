@@ -67,6 +67,22 @@ contract RouterMock is IRouter {
     IERC20(lpToken).transfer(to, liquidity);
   }
 
+  function removeLiquidity(
+    address tokenA,
+    address tokenB,
+    uint256 liquidity,
+    uint256,
+    uint256,
+    address to,
+    uint256
+  ) external override returns (uint256 amountA, uint256 amountB) {
+    IERC20(lpToken).transferFrom(msg.sender, address(this), liquidity);
+    amountA = liquidity / 2;
+    IERC20(tokenA).transfer(to, amountA);
+    amountB = liquidity - amountA;
+    IERC20(tokenB).transfer(to, amountB);
+  }
+
   function getAmountsOut(uint256 amountIn, address[] memory path)
     external
     view

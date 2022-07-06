@@ -17,7 +17,7 @@ describe('Vesting.distribute', function () {
     const Vesting = await ethers.getContractFactory('Vesting');
     vesting = await Vesting.deploy();
     await vesting.deployed();
-    await vesting.init(token.address);
+    await vesting.init(token.address, deployer.address);
   });
 
   it('distribute: should revert if not owner call', async function () {
